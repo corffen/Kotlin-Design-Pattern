@@ -22,8 +22,6 @@
  */
 package com.corffen.kdp.singleton
 
-import kotlin.concurrent.Volatile
-
 /**
  *
  * Double check locking.

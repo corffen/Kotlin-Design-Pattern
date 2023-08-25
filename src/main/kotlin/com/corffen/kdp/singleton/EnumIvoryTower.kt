@@ -31,7 +31,8 @@ package com.corffen.kdp.singleton
  * is developers responsibility.
  */
 enum class EnumIvoryTower {
-    INSTANCE;
+    INSTANCE,
+    ;
 
     override fun toString(): String {
         return declaringJavaClass.getCanonicalName() + "@" + hashCode()
