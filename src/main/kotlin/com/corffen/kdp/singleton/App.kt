@@ -15,8 +15,5 @@ fun main() {
     println("enumIvory2 = $enumIvoryTower2")
 
     val jackManager2 = SingletonManager.getInstance("jack")
-    jackManager2.test("hahha")
-    jackManager2.test("xixi")
-
     println("jack 2 = $jackManager2")
 }
