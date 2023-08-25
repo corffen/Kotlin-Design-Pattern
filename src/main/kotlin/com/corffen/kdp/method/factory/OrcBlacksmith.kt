@@ -29,16 +29,15 @@ import java.util.*
  */
 class OrcBlacksmith : Blacksmith {
     override fun manufactureWeapon(weaponType: WeaponType): Weapon {
-        return ORCARSENAL!![weaponType]!!
+        return ORCARSENAL[weaponType]!!
     }
 
     companion object {
-        private var ORCARSENAL: MutableMap<WeaponType, OrcWeapon>? = null
-
-        init {
-            ORCARSENAL = HashMap(WeaponType.entries.size)
-            Arrays.stream(WeaponType.entries.toTypedArray())
-                .forEach { type: WeaponType -> ORCARSENAL[type] = OrcWeapon(type) }
-        }
+        private val ORCARSENAL: MutableMap<WeaponType, OrcWeapon> =
+            HashMap<WeaponType, OrcWeapon>(WeaponType.entries.size).apply {
+                WeaponType.entries.forEach { type ->
+                    this[type] = OrcWeapon(type)
+                }
+            }
     }
 }

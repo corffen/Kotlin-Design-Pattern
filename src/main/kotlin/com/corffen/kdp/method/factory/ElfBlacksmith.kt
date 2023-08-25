@@ -22,21 +22,19 @@
  */
 package com.corffen.kdp.method.factory
 
-import java.util.*
-
 /**
  * Concrete subclass for creating new objects.
  */
-class OrcBlacksmith : Blacksmith {
+class ElfBlacksmith : Blacksmith {
     override fun manufactureWeapon(weaponType: WeaponType): Weapon {
-        return ORCARSENAL[weaponType]!!
+        return ELF_ARSENAL[weaponType]!!
     }
 
     companion object {
-        private val ORCARSENAL: MutableMap<WeaponType, OrcWeapon> =
-            HashMap<WeaponType, OrcWeapon>(WeaponType.entries.size).apply {
+        private val ELF_ARSENAL: MutableMap<WeaponType, ElfWeapon> =
+            HashMap<WeaponType, ElfWeapon>(WeaponType.entries.size).apply {
                 WeaponType.entries.forEach { type ->
-                    this[type] = OrcWeapon(type)
+                    this[type] = ElfWeapon(type)
                 }
             }
     }

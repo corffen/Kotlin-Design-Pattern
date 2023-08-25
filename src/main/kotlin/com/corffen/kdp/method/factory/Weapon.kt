@@ -1,5 +1,5 @@
 package com.corffen.kdp.method.factory
 
 interface Weapon {
-    fun getWeaponType(): WeaponType
+    val weaponType: WeaponType
 }
