@@ -15,16 +15,5 @@ open class BaseSingleHolder<out T, in A>(val creator: (A) -> T) {
 }
 
 class SingletonManager private constructor(val name: String) {
-    companion object : BaseSingleHolder<SingletonManager, String>({
-        SingletonManager(it)
-    })
-
-
-    fun test(arg: String) {
-        println("$name -->$arg")
-    }
-
-    override fun toString(): String {
-        return name + "@" + hashCode()
-    }
+    companion object : BaseSingleHolder<SingletonManager, String>(::SingletonManager)
 }
