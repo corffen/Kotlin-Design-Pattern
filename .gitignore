@@ -25,3 +25,4 @@ target/
 *.iml
 *.ipr
 /out/
+/src/main/kotlin/com/corffen/kdp/flyweight/readme.md
