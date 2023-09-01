@@ -33,18 +33,11 @@ import java.util.function.Consumer
  * the subsystems.
  */
 class DwarvenGoldmineFacade {
-    private val workers: List<DwarvenMineWorker>
-
-    /**
-     * Constructor.
-     */
-    init {
-        workers = java.util.List.of(
-            DwarvenGoldDigger(),
-            DwarvenCartOperator(),
-            DwarvenTunnelDigger()
-        )
-    }
+    private val workers: List<DwarvenMineWorker> = listOf(
+        DwarvenGoldDigger(),
+        DwarvenCartOperator(),
+        DwarvenTunnelDigger()
+    )
 
     fun startNewDay() {
         makeActions(workers, DwarvenMineWorker.Action.WAKE_UP, DwarvenMineWorker.Action.GO_TO_MINE)
@@ -61,7 +54,7 @@ class DwarvenGoldmineFacade {
     companion object {
         private fun makeActions(
             workers: Collection<DwarvenMineWorker>,
-            vararg actions: DwarvenMineWorker.Action
+            vararg actions: DwarvenMineWorker.Action,
         ) {
             workers.forEach(Consumer { worker: DwarvenMineWorker -> worker.action(*actions) })
         }

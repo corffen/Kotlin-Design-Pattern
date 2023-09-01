@@ -22,7 +22,8 @@
  */
 package com.corffen.kdp.fade
 
-import org.slf4j.Logger
+import com.corffen.kdp.LOGGER
+
 /**
  * DwarvenTunnelDigger is one of the goldmine subsystems.
  */
@@ -31,7 +32,7 @@ class DwarvenTunnelDigger : DwarvenMineWorker() {
         LOGGER.info("{} creates another promising tunnel.", name())
     }
 
-    override fun name(): String? {
+    override fun name(): String {
         return "Dwarven tunnel digger"
     }
 }

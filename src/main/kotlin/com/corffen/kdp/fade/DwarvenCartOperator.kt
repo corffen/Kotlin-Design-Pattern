@@ -22,6 +22,8 @@
  */
 package com.corffen.kdp.fade
 
+import com.corffen.kdp.LOGGER
+
 /**
  * DwarvenCartOperator is one of the goldmine subsystems.
  */
@@ -30,7 +32,7 @@ class DwarvenCartOperator : DwarvenMineWorker() {
         LOGGER.info("{} moves gold chunks out of the mine.", name())
     }
 
-    override fun name(): String? {
+    override fun name(): String {
         return "Dwarf cart operator"
     }
 }
