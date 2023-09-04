@@ -23,27 +23,27 @@
 package com.corffen.kdp.composite
 
 /**
- * Composite interface.
+ * Word.
  */
-abstract class LetterComposite {
-    private val children: MutableList<LetterComposite> = ArrayList()
-    fun add(letter: LetterComposite) {
-        children.add(letter)
+class Word : LetterComposite {
+    /**
+     * Constructor.
+     */
+    constructor(letters: List<Letter>) {
+        letters.forEach { letter -> add(letter) }
     }
-
-    fun count(): Int {
-        return children.size
-    }
-
-    protected open fun printThisBefore() {}
-    protected open fun printThisAfter() {}
 
     /**
-     * Print.
+     * Constructor.
+     * @param letters to include
      */
-    fun print() {
-        printThisBefore()
-        children.forEach { obj -> obj.print() }
-        printThisAfter()
+    constructor(vararg letters: Char) {
+        for (letter in letters) {
+            add(Letter(letter))
+        }
+    }
+
+    override fun printThisBefore() {
+        print(" ")
     }
 }
