@@ -8,4 +8,8 @@ object LOGGER {
             println(msg)
         }
     }
+
+    fun error(msg: String) {
+        System.err.println(msg)
+    }
 }
